@@ -5,4 +5,8 @@
   padding: var(--spacing-md) var(--spacing-sm);
   display: grid;
   place-content: center;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
 }

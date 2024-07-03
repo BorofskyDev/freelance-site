@@ -9,6 +9,7 @@
   z-index: -1;
   overflow: hidden;
   background-color: hsl(var(--background-color));
+  color: hsl(var(--text-color));
   border: none;
   @include mixin.transitionMain;
   @include mixin.respond(smallDesktop) {

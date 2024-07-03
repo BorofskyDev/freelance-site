@@ -1,69 +1,55 @@
-@use '../mixins/breakpoints' as bp;
+@use '../mixins/breakpoints' as *;
 
 @mixin toggleStyle {
-  width: 50%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   color: hsl(var(--primary-color));
   cursor: pointer;
 
-  @include bp.respond(smallDesktop) {
-    width: 10rem;
+  @include respond(smallDesktop) {
     height: 3rem;
     margin: 0 auto;
-    flex-direction: row;
-    gap: 1rem;
-    border: var(--border-xs);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow-lg);
-  }
-
-  @include bp.respond(largeDesktop) {
-    width: 14rem;
   }
 
   &:hover,
   &:focus {
     color: hsl(var(--highlight-color));
 
-    @include bp.respond(smallDesktop) {
-      box-shadow: var(--box-shadow-xl);
-      transform: translate(-1px, -1px);
+    @include respond(smallDesktop) {
     }
   }
 
   &:active {
     color: hsl(var(--active-color));
 
-    @include bp.respond(smallDesktop) {
-      box-shadow: var(--box-shadow-none);
+    @include respond(smallDesktop) {
       transform: translate(0, 0);
     }
   }
 
   .icon {
-    height: 0.9rem;
-    width: 1rem;
+    height: 2rem;
+    width: 2rem;
 
-    @include bp.respond(smallDesktop) {
-      height: 1.5rem;
-      width: 1.5rem;
+    @include respond(smallDesktop) {
+      height: 2.5rem;
+      width: 2.5rem;
     }
 
-    @include bp.respond(largeDesktop) {
-      height: 2rem;
-      width: 2rem;
+    @include respond(largeDesktop) {
+      height: 3rem;
+      width: 3rem;
     }
   }
 
   & span {
     margin-top: -0.2rem;
-    font-size: var(--fs-400);
+    font-size: var(--fs-500);
 
-    @include bp.respond(largeDesktop) {
-      font-size: var(--fs-500);
+    @include respond(largeDesktop) {
+      font-size: var(--fs-600);
     }
   }
 }

@@ -12,25 +12,25 @@ export default function ThemeToggle() {
     }
 
     return (
-    <div className={styles.themeToggle}>
-      <div
-        className={`${styles.lightToggle} ${
-          isLight && mounted ? styles.active : ''
-        }`}
-        onClick={handleToggleTheme}
-      >
-        <SunIcon className={styles.icon} />
-        <span>Light</span>
+      <div className={styles.themeToggle}>
+        {mounted &&
+          (isLight ? (
+            <div
+              className={`${styles.darkToggle} ${styles.active}`}
+              onClick={handleToggleTheme}
+            >
+              <MoonIcon className={styles.icon} />
+              <span>Dark</span>
+            </div>
+          ) : (
+            <div
+              className={`${styles.lightToggle} ${styles.active}`}
+              onClick={handleToggleTheme}
+            >
+              <SunIcon className={styles.icon} />
+              <span>Light</span>
+            </div>
+          ))}
       </div>
-      <div
-        className={`${styles.darkToggle} ${
-          !isLight && mounted ? styles.active : ''
-        }`}
-        onClick={handleToggleTheme}
-      >
-        <MoonIcon className={styles.icon} />
-        <span>Dark</span>
-      </div>
-    </div>
-  )
+    )
 }

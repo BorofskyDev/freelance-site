@@ -1,29 +1,25 @@
 :root {
-
-  --background-color: 0 0% 96%; // #F5F5F5;
+  --background-color: 0 0% 98%; // #FAFAFA;
   --text-color: 0 0% 5%; // #0D0D0D;
   --primary-color: 214 76% 32%; // #144990;
   --highlight-color: 261 76% 32%; // #3f1490;
   --active-color: 0 76% 32%; // #901414;
   --visited-color: 235 48% 41%; // #363F9B;
 
-   --gradient-primary: linear-gradient(
+  --gradient-primary: linear-gradient(
     45deg,
-    hsl(var(--color-link-highlight)),
-    hsl(var(--color-link-primary))
+    hsl(var(--primary-color)),
+    hsl(var(--highlight-color))
   );
 
   --gradient-hover: linear-gradient(
     -45deg,
-    hsl(var(--color-link-highlight)),
-    hsl(var(--color-link-primary))
+    hsl(var(--highlight-color)),
+    hsl(var(--primary-color))
   );
 }
 
-
-
 [data-theme='dark'] {
-
   --background-color: 0 0% 13%; // #222222;
   --text-color: 0 0% 98%; // #FAFAFA;
   --primary-color: 214 76% 75%; // #8fb9f0;

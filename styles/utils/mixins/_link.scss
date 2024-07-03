@@ -4,8 +4,9 @@
 @mixin linkStyles {
   position: relative;
   cursor: pointer;
+  color: hsl(var(--text-color));
   fill: hsl(var(--primary-color));
-  opacity: 0;
+  // opacity: 0;
   @include mixin.transitionMain;
 
   &:hover,

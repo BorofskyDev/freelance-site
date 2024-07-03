@@ -11,6 +11,10 @@
   gap: var(--spacing-lg);
   @include mixin.sectionPadding;
 
+  &:last-of-type {
+    border: none;
+  }
+
   @include mixin.respond(tab) {
     align-items: left;
   }

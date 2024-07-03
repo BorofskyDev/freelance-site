@@ -2,5 +2,6 @@
 
 .navLink {
   font-size: 1.5rem;
+  color: hsl(var(--text-color));
   @include mixin.linkStyles;
 }

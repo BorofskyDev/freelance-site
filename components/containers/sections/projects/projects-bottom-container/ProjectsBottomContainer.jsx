@@ -3,7 +3,7 @@ import ProjectsCard from "./projects-card/ProjectsCard";
 
 export default function ProjectsBottomContainer() {
     return (
-        <ContentContainer>
+        <ContentContainer >
             <ProjectsCard />
         </ContentContainer>
     )
