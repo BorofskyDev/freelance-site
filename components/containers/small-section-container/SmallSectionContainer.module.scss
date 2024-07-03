@@ -1,0 +1,8 @@
+@use '../../../styles/utils/mixins' as mixin;
+.smallSectionContainer {
+  height: 50dvh;
+  border-bottom: var(--border-xs);
+  padding: var(--spacing-md) var(--spacing-sm);
+  display: grid;
+  place-content: center;
+}

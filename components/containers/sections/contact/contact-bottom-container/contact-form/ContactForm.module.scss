@@ -1,0 +1,6 @@
+@use '../../../../../../styles/utils/mixins' as mixin;
+
+.contactForm {
+    width: 100%;
+@include mixin.sectionPadding;
+}

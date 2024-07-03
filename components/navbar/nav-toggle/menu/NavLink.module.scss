@@ -1,0 +1,6 @@
+@use '../../../../styles/utils/mixins' as mixin;
+
+.navLink {
+  font-size: 1.5rem;
+  @include mixin.linkStyles;
+}

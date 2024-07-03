@@ -1,0 +1,13 @@
+@use './breakpoints' as bp;
+
+@mixin sectionPadding {
+  padding: var(--spacing-lg) var(--spacing-xs);
+
+  @include bp.respond(tab) {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  @include bp.respond(largeDesktop) {
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+}

@@ -1,0 +1,44 @@
+@use '../../styles/utils/mixins' as mixin;
+
+.navbar {
+  width: 100%;
+  height: 2.5rem;
+  border-bottom: var(--border-xs);
+  background-color: hsl(var(--background-color));
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  overflow: hidden;
+  @include mixin.respond(tab) {
+    height: 3.5rem;
+  }
+  @include mixin.respond(smallDesktop) {
+    height: 5rem;
+  }
+}
+
+.navbarButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.stickyNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  height: 2.5rem;
+  border-bottom: var(--border-sm);
+  background-color: hsl(var(--background-color));
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  z-index: var(--zindexSm);
+
+  @include mixin.respond(tab) {
+    height: 3.5rem;
+  }
+
+  @include mixin.respond(smallDesktop) {
+    height: 5rem;
+  }
+}

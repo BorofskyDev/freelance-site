@@ -1,0 +1,39 @@
+@use '../../../styles/utils/mixins' as mixin;
+
+.themeToggle {
+  height: 100%;
+  width: 100%;
+  padding-inline: var(--padding-xs);
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include mixin.transitionMain;
+
+  .lightToggle {
+    border-right: 1px solid;
+    @include mixin.toggleStyle;
+    @include mixin.transitionMain;
+  }
+
+  .darkToggle {
+    font-weight: 500;
+    border-left: 1px solid;
+    border-color: hsl(var(--text-color));
+    @include mixin.toggleStyle;
+    @include mixin.transitionMain;
+  }
+
+  .active {
+    color: hsl(var(--active-color));
+    font-weight: 700;
+    border-color: hsl(var(--active-color));
+    @include mixin.transitionMain;
+
+    @include mixin.respond(smallDesktop) {
+      border-color: hsl(var(--active-color));
+      border: 0.125rem solid;
+      box-shadow: var(--box-shadow-sm);
+    }
+  }
+}

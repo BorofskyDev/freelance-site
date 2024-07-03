@@ -1,0 +1,19 @@
+@use '../../../../styles/utils/mixins' as mixin;
+
+.mediumContainer {
+  border-bottom: var(--border-xs);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+
+  &:last-child {
+    border-bottom: none;
+  }
+  @include mixin.sectionPadding;
+
+  @include mixin.respond(tab) {
+    align-items: flex-start;
+  }
+}

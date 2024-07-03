@@ -1,0 +1,12 @@
+@use '../../../../styles/utils/mixins' as mixin;
+
+.sectionHeadingWrapper {
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    @include mixin.respond(tab) {
+        align-items: flex-start;
+    }
+}

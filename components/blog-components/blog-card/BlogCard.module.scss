@@ -1,0 +1,71 @@
+@use '../../../styles/utils/mixins' as mixin;
+
+.blogCard {
+  margin: 0 auto;
+  border-bottom: var(--border-xs);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  overflow: hidden;
+  @include mixin.sectionPadding;
+
+  @include mixin.respond(tab) {
+    align-items: left;
+  }
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+
+    @include mixin.respond(smallDesktop) {
+margin: var(--spacing-lg) auto;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+  .image {
+    width: 100%;
+    height: 100%;
+    border: var(--border-xs);
+    object-fit: cover;
+  }
+
+  .contentBlock {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-lg);
+
+    @include mixin.respond(smallDesktop) {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  .categories {
+    position: relative;
+    width: 100%;
+    padding: var(--spacing-xs) 0;
+    border-top: var(--border-xs);
+    border-bottom: var(--border-xs);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+
+    
+  }
+}

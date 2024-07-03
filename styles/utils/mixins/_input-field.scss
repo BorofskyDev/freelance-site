@@ -1,0 +1,61 @@
+@use './transitions' as tr;
+@use './breakpoints' as br;
+
+@mixin inputField {
+  margin: var(--spacing-md) auto;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+
+  @include tr.transitionMain;
+  @include br.respond(smallDesktop) {
+    margin: var(--spacing-3xl) auto;
+  }
+
+  label {
+    font-size: var(--fs-400);
+    color: var(--color-text);
+    margin-top: var(--spacing-xs);
+    padding-inline: var(--spacing-xs);
+    @include tr.transitionMain;
+  }
+
+  input,
+  textarea {
+    padding: var(--spacing-xs);
+    border: none;
+    border-right: var(--border-xs);
+    border-bottom: var(--border-xs);
+    background-color: inherit;
+    color: hsl(var(--primary-color));
+    font-weight: semi-bold;
+    letter-spacing: 1px;
+    @include tr.transitionMain;
+
+    &::placeholder {
+      color: var(--color-text);
+      font-size: var(--fs-400);
+      letter-spacing: 0px;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: var(--box-shadow-lg);
+      transform: translate(-2px, -2px);
+    }
+
+    &:focus {
+      outline-color: hsl(var(--active-color));
+    }
+
+    &:active {
+      border-color: hsl(var(--active-color));
+      box-shadow: var(--box-shadow-xl);
+      color: hsl(var(--active-color));
+
+      &::placeholder {
+        color: hsl(var(--active-color));
+      }
+    }
+  }
+}

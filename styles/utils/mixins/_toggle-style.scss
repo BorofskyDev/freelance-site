@@ -1,0 +1,69 @@
+@use '../mixins/breakpoints' as bp;
+
+@mixin toggleStyle {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--primary-color));
+  cursor: pointer;
+
+  @include bp.respond(smallDesktop) {
+    width: 10rem;
+    height: 3rem;
+    margin: 0 auto;
+    flex-direction: row;
+    gap: 1rem;
+    border: var(--border-xs);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lg);
+  }
+
+  @include bp.respond(largeDesktop) {
+    width: 14rem;
+  }
+
+  &:hover,
+  &:focus {
+    color: hsl(var(--highlight-color));
+
+    @include bp.respond(smallDesktop) {
+      box-shadow: var(--box-shadow-xl);
+      transform: translate(-1px, -1px);
+    }
+  }
+
+  &:active {
+    color: hsl(var(--active-color));
+
+    @include bp.respond(smallDesktop) {
+      box-shadow: var(--box-shadow-none);
+      transform: translate(0, 0);
+    }
+  }
+
+  .icon {
+    height: 0.9rem;
+    width: 1rem;
+
+    @include bp.respond(smallDesktop) {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+
+    @include bp.respond(largeDesktop) {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
+  & span {
+    margin-top: -0.2rem;
+    font-size: var(--fs-400);
+
+    @include bp.respond(largeDesktop) {
+      font-size: var(--fs-500);
+    }
+  }
+}

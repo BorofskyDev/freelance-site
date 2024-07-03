@@ -1,0 +1,11 @@
+@use '../../../styles/utils/mixins' as mixin;
+
+.heading3 {
+    font-size: var(--fs-700);
+    font-weight: 600;
+    line-height: 90%;
+    text-align: center;
+    @include mixin.respond(tab) {
+        text-align: left;
+    }
+}

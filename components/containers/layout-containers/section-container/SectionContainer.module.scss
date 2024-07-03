@@ -1,0 +1,23 @@
+@use '../../../../styles/utils/mixins' as mixin;
+
+.sectionContainer {
+  width: 100%;
+  border-bottom: var(--border-xs);
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  
+  @include mixin.respond(tab) {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+  }
+
+  @include mixin.respond(smallDesktop) {
+    grid-template-columns: 1fr 2fr;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+  }
+
+}

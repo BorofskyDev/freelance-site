@@ -1,0 +1,13 @@
+@use '../../../styles/utils/mixins' as mixin;
+
+.heading4 {
+    // font-family: var(--font-body);
+    font-size: var(--fs-600);
+    text-align: center;
+    font-weight: 600;
+
+    @include mixin.respond(largeDesktop) {
+        line-height: 100%;
+        text-align: left;
+    }
+}

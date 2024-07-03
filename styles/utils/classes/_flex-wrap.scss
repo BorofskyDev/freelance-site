@@ -1,0 +1,12 @@
+@use '../mixins' as mixin;
+
+.flex-wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    @include mixin.respond(tab) {
+        justify-content: start;
+    }
+}

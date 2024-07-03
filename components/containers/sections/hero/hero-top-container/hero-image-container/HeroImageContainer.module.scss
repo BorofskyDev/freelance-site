@@ -1,0 +1,28 @@
+@use '../../../../../../styles/utils/mixins' as mixin;
+
+.imageContainer {
+  width: 80%;
+  padding: var(--spacing-sm) 0;
+  display: grid;
+  place-content: center;
+  border-top: var(--border-xs);
+  border-bottom: var(--border-xs);
+
+  @include mixin.respond(tab) {
+    width: 100%;
+  }
+
+  @include mixin.respond(largeDesktop) {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .image {
+    height: 10rem;
+    width: 7rem;
+
+    @include mixin.respond(largeDesktop) {
+      height: 15rem;
+      width: 11rem;
+    }
+  }
+}

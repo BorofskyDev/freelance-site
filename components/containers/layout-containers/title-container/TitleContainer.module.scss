@@ -1,0 +1,14 @@
+@use '../../../../styles/utils/mixins' as mixin;
+
+.titleContainer {
+  width: 100%;
+  border-bottom: var(--border-xs);
+  @include mixin.sectionPadding;
+  
+  @include mixin.respond(tab) {
+    border-bottom: none;
+    border-right: var(--border-xs);
+  }
+
+  
+}

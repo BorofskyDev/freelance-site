@@ -1,0 +1,65 @@
+@use './transitions' as mixin;
+@use './breakpoints' as bp;
+
+@mixin linkStyles {
+  position: relative;
+  cursor: pointer;
+  fill: hsl(var(--primary-color));
+  opacity: 0;
+  @include mixin.transitionMain;
+
+  &:hover,
+  &:focus {
+    fill: hsl(var(--highlight-color));
+    opacity: 1;
+  }
+
+  a {
+    color: hsl(var(--primary-color));
+    @include mixin.transitionMain;
+
+    &:visited {
+      color: hsl(var(--visited-color));
+    }
+
+    &:hover,
+    &:focus {
+      font-weight: 600;
+      color: hsl(var(--highlight-color));
+
+      &::before {
+        opacity: 1;
+        bottom: -1rem;
+        @include bp.respond(smallDesktop) {
+          bottom: -0.5rem;
+        }
+      }
+    }
+
+    &:visited:hover,
+    &:visited:focus {
+      color: hsl(var(--highlight-color));
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0;
+      width: 100%;
+      height: 0.125rem;
+      background-color: currentColor;
+      opacity: 0;
+      @include mixin.transitionMain;
+
+      @include bp.respond(smallDesktop) {
+        bottom: -1rem;
+        width: 95%;
+      }
+    }
+
+    &:active {
+      color: hsl(var(--active-color));
+    }
+  }
+}

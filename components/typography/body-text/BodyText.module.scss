@@ -1,0 +1,13 @@
+@use '../../../styles/utils/mixins' as mixin;
+
+.bodyText {
+    width: 100%;
+
+    @include mixin.respond(smallDesktop) {
+        max-width: 55rem;
+    }
+
+    @include mixin.respond(largeDesktop) {
+        line-height: 170%;
+    }
+}

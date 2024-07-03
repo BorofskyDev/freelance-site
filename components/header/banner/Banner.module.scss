@@ -1,0 +1,42 @@
+@use '../../../styles/utils/mixins' as mixin;
+
+.banner {
+  width: 100%;
+  height: 5rem;
+  border-bottom: var(--border-xs);
+  display: grid;
+  place-content: center;
+  z-index: var(--zindexMax);
+
+  @include mixin.paddingSpacingLg();
+  @include mixin.respond(tab) {
+    height: 8rem;
+  }
+
+  @include mixin.respond(smallDesktop) {
+    height: 10rem;
+  }
+
+  @include mixin.respond(largeDesktop) {
+    height: 13.5rem;
+  }
+
+  span {
+    font-size: 2.5rem;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    z-index: var(--zindexMax);
+
+    @include mixin.respond(tab) {
+      font-size: 3.875rem;
+    }
+
+    @include mixin.respond(smallDesktop) {
+      font-size: 6rem;
+    }
+
+    @include mixin.respond(largeDesktop) {
+      font-size: 8.5rem;
+    }
+  }
+}

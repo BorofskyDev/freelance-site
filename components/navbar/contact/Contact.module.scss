@@ -1,0 +1,65 @@
+@use '../../../styles/utils/mixins' as mixin;
+
+.contactButton {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-left: var(--border-xs);
+  background-color: inherit;
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+  color: hsl(var(--primary-color));
+  font-weight: 700;
+  z-index: 1001;
+  overflow: hidden;
+  @include mixin.transitionMain;
+
+  @include mixin.respond(smallDesktop) {
+    font-size: 3rem;
+  }
+
+  @include mixin.respond(largeDesktop) {
+    font-size: 4rem;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    @include mixin.transitionMain;
+  }
+
+  &::before {
+    transform: translateX(-100%);
+    background-color: hsl(var(--highlight-color));
+  }
+
+  &::after {
+    transform: translateY(-100%);
+    background-color: hsl(var(--active-color));
+  }
+
+  &:hover,
+  &:focus {
+    color: hsl(var(--background-color));
+
+    &::before {
+      transform: translateX(0);
+    }
+  }
+
+  &:active {
+    color: hsl(var(--background-color));
+
+    &::after {
+      transform: translateY(0);
+    }
+  }
+}

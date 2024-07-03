@@ -1,0 +1,7 @@
+@use '../../../styles/utils/mixins' as mixin;
+
+.internalLink {
+  font-size: var(--fs-500);
+  transition: none;
+  @include mixin.linkStyles;
+}

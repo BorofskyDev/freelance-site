@@ -1,0 +1,13 @@
+@use '../../../styles/utils/mixins' as mixin;
+
+.sectionTitle {
+   
+    width: 100%;
+    margin: var(--spacing-2xl) auto;
+    padding: var(--spacinglg) auto;
+    text-align: center;
+    @include mixin.respond(tab) {
+        text-align: left;
+    }
+
+}
