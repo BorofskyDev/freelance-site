@@ -6,7 +6,9 @@
   display: grid;
   place-content: center;
 
-  &:last-of-type {
-    border-bottom: none;
-  }
+  &:last-of-type{
+     border-bottom: none ; 
+   }
+
 }
+

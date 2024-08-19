@@ -13,12 +13,13 @@ export default function ProjectsCard() {
       {projectData.map((project, index) => (
         <div key={index} className={styles.projectsCard}>
           <Heading3>{project.title}</Heading3>
-          <motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
             <Image
               className={styles.image}
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
               src={project.image}
               alt={project.altTag}
               width={1600}
@@ -35,7 +36,9 @@ export default function ProjectsCard() {
               <span key={index}>{tech}</span>
             ))}
           </motion.div>
-          <BodyText className={styles.description}>{project.description}</BodyText>
+          <BodyText className={styles.description}>
+            {project.description}
+          </BodyText>
           <div className={styles.links}>
             <ExternalLink href={project.blog}>
               {project.title} Blog

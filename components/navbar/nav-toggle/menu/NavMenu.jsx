@@ -13,5 +13,3 @@ export default function NavMenu({ isMenuOpen }) {
     </nav>
   )
 }
-
-
