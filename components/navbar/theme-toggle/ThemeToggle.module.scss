@@ -10,6 +10,12 @@
   justify-content: center;
   @include mixin.transitionMain;
 
+   &:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .lightToggle {
     @include mixin.toggleStyle;
     @include mixin.transitionMain;

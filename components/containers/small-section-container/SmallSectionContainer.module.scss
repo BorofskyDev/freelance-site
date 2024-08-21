@@ -10,5 +10,14 @@
      border-bottom: none ; 
    }
 
+   @include mixin.respond(smallDesktop) {
+    &:nth-of-type(even){
+      border-left: var(--border-xs);
+    }
+    &:nth-of-type(7) {
+      border-bottom: none;
+    }
+   }
+
 }
 
